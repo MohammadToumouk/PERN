@@ -2,48 +2,20 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const pool = require("./db");
+const userRouter =  require('./routes/users');
+const orderRouter = require('./routes/orders');
+const todosRouter = require('./routes/todos');
 
 
 app.use(cors());
 app.use(express.json());
 
-/* Routes */
-
-/* Create todo */
-
-app.post('/todos', async(req,res) => {
-    try {
-     const {description} = req.body;
-     const newTodo = await pool.query("INSERT INTO todo (description) VALUES ($1) RETURNING *",
-     [description]
-     );
-     console.log(newTodo.rows)
-
-     res.json(newTodo.rows[0])
-        
-    } catch (error) {
-        console.log(error)
-        res.status(404).send("falssssse ")
-    }
-})
 
 
-/* get all todos */
+app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
+app.use("/api/todos", todosRouter);
 
-app.get('/todos', async(req,res) => {
-    try {
-      const {rows} =  await pool.query("SELECT * FROM todo");
-      res.send(rows);
-    } catch (error) {
-        console.log(error)
-    }
-})
-
-/* get a todo */
-
-/* update a todo */
-
-/* delete a todo */
 
 
 
