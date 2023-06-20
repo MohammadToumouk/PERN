@@ -30,6 +30,15 @@ app.post('/todos', async(req,res) => {
 
 /* get all todos */
 
+app.get('/todos', async(req,res) => {
+    try {
+      const {rows} =  await pool.query("SELECT * FROM todo");
+      res.send(rows);
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 /* get a todo */
 
 /* update a todo */
