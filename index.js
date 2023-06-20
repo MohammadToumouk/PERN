@@ -2,10 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const pool = require("./db");
+const userRouter =  require('./routes/users');
 
 
 app.use(cors());
 app.use(express.json());
+
+
+
+app.use("/api/users", userRouter);
 
 /* Routes */
 
