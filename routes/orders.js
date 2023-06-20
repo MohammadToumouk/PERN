@@ -3,7 +3,7 @@ const pool = require("../db")
 
 const orderRouter = express.Router();
 
-/* Get All Users */
+/* Get All Orders */
 
 orderRouter.get('/', async(req,res) => {
     try {
@@ -16,7 +16,7 @@ orderRouter.get('/', async(req,res) => {
     }
 });
 
-/* get user by ID */
+/* get order by ID */
 
 orderRouter.get('/:id', async(req,res) => {
     try {
@@ -31,7 +31,7 @@ orderRouter.get('/:id', async(req,res) => {
 });
 
 
-/* Creating a User */
+/* Creating an order */
 
 orderRouter.post('/', async(req,res) => {
     try {
@@ -45,7 +45,7 @@ orderRouter.post('/', async(req,res) => {
     }
 });
 
-/* Updating a user */
+/* Updating an order */
 
 orderRouter.put('/:id', async(req,res) => {
     try {
@@ -60,7 +60,7 @@ orderRouter.put('/:id', async(req,res) => {
     }
 });
 
-/* Deleting a user */
+/* Deleting an order */
 
 orderRouter.delete('/:id', async(req,res) => {
     try {

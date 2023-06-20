@@ -30,6 +30,23 @@ userRouter.get('/:id', async(req,res) => {
     }
 });
 
+/* get user Orders */
+
+userRouter.get('/:id/orders', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const userAndOrders = await pool.query(
+        'SELECT users.*, orders.* FROM users JOIN orders ON users.id = orders.user_id WHERE users.id = $1;',
+        [id]
+      );
+      res.json(userAndOrders.rows[0].price);
+    } catch (error) {
+      console.log(error);
+      res.status(500);
+    }
+  });
+  
+
 
 /* Creating a User */
 
