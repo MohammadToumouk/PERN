@@ -18,8 +18,8 @@ Before running the project locally, make sure you have the following installed:
 
 To get the project up and running on your local machine, follow these steps:
 
-1. Clone the repository: `git clone [repository URL]`
-2. Navigate to the project directory: `cd [project directory]`
+1. Clone the repository: `git clone [vite-project]`
+2. Navigate to the project directory: `cd [vite-project]`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm run dev`
 5. Open your browser and visit: `http://localhost:3000`
