@@ -1,12 +1,3 @@
-# Online BookStore
-
-Online BookStore is a full-stack web application developed using the PERN (PostgreSQL, Express, React, Node.js) stack. It allows users to add books to their collection, delete books, and make purchases.
-
-## Features
-
-- Add books to your collection
-- Delete books from your collection
-- Purchase books online
 
 ## Prerequisites
 
